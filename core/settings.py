@@ -29,7 +29,9 @@ SECRET_KEY = os.environ.get('LM_SECRET_KEY')
 DEBUG = os.environ.get('DEBUG_VALUE')
 
 ALLOWED_HOSTS = [
-    '*'
+    '*',
+    'https://pallindrome-drf.herokuapp.com/',
+    'http://pallindrome-drf.herokuapp.com/',
 ]
 
 
@@ -175,3 +177,5 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
+django_heroku.settings(locals())
